@@ -1,0 +1,65 @@
+
+                            Book (Immutable)
+|                                                          
+|   - title: String
+|   - author: String
+|
+|   + Book (String, String)        |  Constructor for book, takes title and author
+|   + getTitle()                   |  Getter for title
+|   + getAuthor()                  |  Getter for author
+|_____________________________________________________________
+
+
+
+
+
+
+                            Library
+| 
+|   - library : ArrayList<Book>
+|
+|   + Library()                     |  Constructor for Library
+|   + addBook(Book)                 |  Adds a book with a title, author, and rating
+|   + booksByAuthor(String)         |  Returns an ArrayList<Book> composed of books by a certain author
+|   + booksByRating(int)            |  Returns an ArrayList<Book> composed of books by a certain rating
+|   + getUnreadBooks()              |  Returns an ArrayList<Book> composed of unread books
+|   + getRandomSuggestion()         |  Returns a random unread book from the library (if any)
+|   + addBooksFromFile()            |  Reads a list of books from a file and adds them to the library (pair with addBook() method)
+|   + searchForBook(String, String) |  Returns the book with the passed title and author
+|   + getSortedBooks(String)        |  Returns a sorted list of books, a flag needs to be passed to determine how we will sort the books
+|
+|
+|
+|
+|
+|
+|
+|_____________________________________________________________
+
+
+
+
+                            Ratings
+| 
+|   - ratings : HashMap<Book,Integer>      | A hashmap that stores a book as a key and its rating as a value
+|
+|
+|   + setRatingForBook(Book, int)          | Set rating for a specific book
+|   + getRating(Book)                      | Get the rating for a specific book
+|
+|_____________________________________________________________
+
+
+
+                            ReadingList
+|
+|   - unreadBooks : ArrayList<Book>         
+|   - readBooks : ArrayList<Book>
+|
+|   + ReadingList()                 | Constructor
+|   + addUnreadBook(Book)           | Adds a new book to the list of unread books
+|   + setToRead(Book)               | Set the given book to read by moving it to the read list
+|
+|
+|_____________________________________________________________
+
