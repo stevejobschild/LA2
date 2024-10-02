@@ -1,6 +1,6 @@
 /*
- * Daniel Rendon
- * 
+ * Name: Daniel Rendon
+ * Username: drendon10
  * 
  * 
  */
@@ -36,6 +36,16 @@ public class ReadingList {
             unreadBooks.remove(book);
             readBooks.add(book);
         }
+    }
+
+    public ArrayList<Book> getUnreadBooks() {
+        ArrayList<Book> allUnread = new ArrayList<>(unreadBooks);
+        return allUnread;
+    }
+
+    public ArrayList<Book> getReadBooks() {
+        ArrayList<Book> allRead = new ArrayList<>(readBooks);
+        return allRead;
     }
 
     // get unread book

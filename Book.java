@@ -6,8 +6,16 @@
  * 
  * 
  * 
- * Daniel Rendon
+ * Name: Daniel Rendon
+ * Username: drendon10
+ * 
  */
+
+/*
+* Encapsulation Explained: 
+* 
+* 
+*/
 
 public final class Book {
     // Immutable class
