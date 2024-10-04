@@ -1,3 +1,10 @@
+/*
+ * Name: Daniel Rendon
+ * Username: drendon10
+ * 
+ * 
+ */
+
 import java.util.Comparator;
 
 public class CompareByTitle implements Comparator<Book> {

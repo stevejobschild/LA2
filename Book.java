@@ -6,8 +6,16 @@
  * 
  * 
  * 
- * Daniel Rendon
+ * Name: Daniel Rendon
+ * Username: drendon10
+ * 
  */
+
+/*
+* Encapsulation Explained: 
+* 
+* 
+*/
 
 public final class Book {
     // Immutable class
@@ -20,7 +28,6 @@ public final class Book {
     public Book(String t, String a) {
         title = t;
         author = a;
-
     }
 
     // Getter for title
@@ -32,4 +39,9 @@ public final class Book {
     public String getAuthor() {
         return author;
     }
+
+	@Override
+	public String toString() {
+		return "\"" + title + "\" By: " + author;
+	}
 }
