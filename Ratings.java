@@ -1,6 +1,6 @@
 /*
- * Name: Daniel Rendon
- * Username: drendon10
+ * Name: Daniel Rendon, Joshua Boyer
+ * Username: drendon10, joshuab4
  * 
  * 
  */

@@ -1,3 +1,10 @@
+/*
+ * Name: Daniel Rendon, Joshua Boyer
+ * Username: drendon10, joshuab4
+ * 
+ * 
+ */
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
