@@ -1,6 +1,6 @@
 /*
- * Name: Daniel Rendon
- * Username: drendon10
+ * Name: Daniel Rendon, Joshua Boyer
+ * Username: drendon10, joshuab4
  * 
  * 
  */
@@ -15,10 +15,22 @@ import java.util.Scanner;
 
 /*
  * Encapsulation Explained: 
+ * This class has private instance methods meaning that they can't be changed
+ * outside of the class without going through the class' methods as long as 
+ * we handle escaping references. We handle escaping references by creating
+ * a new ArrayList with the objects we want, this means that we never return
+ * an actual reference to the data so it won't be able to be changed
+ * outside of the class.
+ * 
+ * 
+ * 
+ * Design:
+ * This class uses an ArrayList to keep track of the library of books.
+ * It also uses a Ratings object to keep track of the ratings, and a
+ * ReadingList to keep track of the read and unread books in the library.
  * 
  * 
  */
-
 public class Library {
 
     // Instance Variables
@@ -31,7 +43,6 @@ public class Library {
         library = new ArrayList<>();
         readingList = new ReadingList();
         ratings = new Ratings();
-
     }
 
     /**
@@ -77,11 +88,42 @@ public class Library {
     public ArrayList<Book> booksByAuthor(String author) {
         ArrayList<Book> booksByAuth = new ArrayList<>();
         for (Book book : library) {
-            if (book.getTitle().equals(author)) {
+            if (book.getAuthor().equals(author)) {
                 booksByAuth.add(book);
             }
         }
         return booksByAuth;
+    }
+
+    /**
+     * Get all books by a certain title
+     * 
+     * @return All books by title
+     * 
+     * @pre title != null
+     *
+     */
+    public ArrayList<Book> booksByTitle(String title) {
+        ArrayList<Book> booksByTitle = new ArrayList<>();
+        for (Book book : library) {
+            if (book.getTitle().equals(title)) {
+                booksByTitle.add(book);
+            }
+        }
+        return booksByTitle;
+    }
+
+    /**
+     * Returns all books with a specific rating
+     * 
+     * @pre rating is an int 1-5
+     * 
+     * @return the books that have that specific rating
+     * 
+     *
+     */
+    public ArrayList<Book> booksByRating(int rating) {
+        return ratings.getBooksWithRating(rating);
     }
 
     /**
@@ -104,12 +146,11 @@ public class Library {
 
     /**
      * This method creates and returns a copy of the library that is sorted
-     * using a class that implemets Comparator to sort by Author in alphabetical
+     * using a class that implements Comparator to sort by Author in alphabetical
      * order
      * 
      * @return ArrayList<Book>
      * 
-     *
      */
     public ArrayList<Book> sortedByAuthor() {
         // create a copy of the library to avoid escaping references
@@ -120,7 +161,7 @@ public class Library {
 
     /**
      * This method creates and returns a copy of the library that is sorted
-     * using a class that implemets Comparator to sort by Title in alphabetical
+     * using a class that implements Comparator to sort by Title in alphabetical
      * order
      * 
      * @return ArrayList<Book>
@@ -152,7 +193,7 @@ public class Library {
 
     /**
      * This method creates and returns a copy of the unread books that is sorted
-     * using a class that implemets Comparator to sort by Title in alphabetical
+     * using a class that implements Comparator to sort by Title in alphabetical
      * order
      * 
      * @return ArrayList<Book>
@@ -193,7 +234,6 @@ public class Library {
      * @throws FileNotFoundException when there has been an error reading the file
      *
      */
-
     public void addBooksFromFile(String filename) {
         try {
             File file = new File(filename);
@@ -202,7 +242,6 @@ public class Library {
             if (fileScanner.hasNextLine()) {
                 fileScanner.nextLine();
             }
-
             while (fileScanner.hasNextLine()) {
                 String line = fileScanner.nextLine();
                 String[] content = line.split(";");
@@ -210,7 +249,6 @@ public class Library {
                     String title = content[0].trim();
                     String author = content[1].trim();
                     addBook(title, author);
-
                 }
             }
             fileScanner.close();
@@ -218,7 +256,6 @@ public class Library {
         } catch (FileNotFoundException e) {
             System.out.println("Error reading file!\n");
         }
-
     }
 
 }

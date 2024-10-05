@@ -1,0 +1,41 @@
+Name: Daniel Rendon, Joshua Boyer
+Username: drendon10, joshuab4
+
+Classes:
+    Book: creates a book object
+    Library: creates a library object which holds all the books
+    Ratings: holds the ratings for all rated books
+    ReadingList: separates unread and read books
+    CompareByAuthor: implements Comparator to compare by author
+    CompareByTitle: implements Comparator to compare by title
+    MyLibrary: hold the main method that allows the user to interact with our program
+
+
+Interfaces:
+    We used the Comparator interface to be able to sort books by
+    author and title.
+
+Library classes involved:
+    We used ArrayLists to store books in the library class, and in the reading list class.
+    We used a HashMap to keep track of the ratings of the books that had been rated.
+    We used random to generate a random index for the random suggested book.
+    We used the collections class to sort books.
+    We used scanner to deal with user input.
+
+Data structures used:
+    We mostly used ArrayLists to store all books in the library and reading list classes,
+    but in the ratings class, we used a hashmap to map books to ratings.
+
+Design Patterns:
+    We didn't use any specific design pattern discussed in class.
+    We tried to maintain encapsulation in the way that it was shown in class and
+    we believe we achieved encapsulation in this project. 
+
+Major Design Decisions:
+    The biggest design decision we made was how we decided to store the ratings and the 
+    read/unread books. We decided to create 2 different classes that would handle these two things.
+    We created two objects, one for each of these classes, inside our library class so that we could
+    hold the ratings and the read/unread books in the library class to be able to do things with the data
+    while not giving that work to the library class and also while allowing the book to be immutable. 
+    This means that both the library and book classes don't do more work than they need to, which shows
+    good design as discussed in class.

@@ -1,11 +1,21 @@
 /*
- * Name: Daniel Rendon
- * Username: drendon10
+ * Name: Daniel Rendon, Joshua Boyer
+ * Username: drendon10, joshuab4
  * 
  * 
  */
 
 import java.util.ArrayList;
+
+/*
+ * Encapsulation explained: 
+ * This class has private instance variables meaning that can't be changed outside 
+ * of the class if we handle espacing references. We handle escaping references
+ * by creating copies of our data and returning the copies ensuring the actual data
+ * is never changed outside of the class.
+ *
+ * 
+ */
 
 public class ReadingList {
     private ArrayList<Book> unreadBooks;
@@ -17,18 +27,23 @@ public class ReadingList {
         readBooks = new ArrayList<>();
     }
 
-    // Constructor for passing in a full library of books
-    public ReadingList(ArrayList<Book> library) {
-        unreadBooks = new ArrayList<>(library);
-        readBooks = new ArrayList<>();
-    }
-
-    // Add a new book to the unread list
+    /**
+     * Add a book to the unread list
+     * 
+     * @pre book != null
+     *
+     */
     public void addUnreadBook(Book book) {
         unreadBooks.add(book);
     }
 
-    // Set a book to read
+    /**
+     * Set a book to read
+     * 
+     * 
+     * @pre book != null
+     *
+     */
     public void setToRead(Book book) {
         // check if book exists in the list of unread books
         // if it exists, set it to read by moving it to the read list
@@ -38,27 +53,27 @@ public class ReadingList {
         }
     }
 
+    /**
+     * Get a copy of all unread books
+     * 
+     * @return a list of all unread books
+     *
+     *
+     */
     public ArrayList<Book> getUnreadBooks() {
         ArrayList<Book> allUnread = new ArrayList<>(unreadBooks);
         return allUnread;
     }
 
+    /**
+     * Get a copy of all read books
+     * 
+     * @return a list of all read books
+     *
+     *
+     */
     public ArrayList<Book> getReadBooks() {
         ArrayList<Book> allRead = new ArrayList<>(readBooks);
         return allRead;
     }
-
-    // get unread book
-    /*
-     * 
-     * 
-     * 
-     */
-
-    // get read book
-    /*
-     * 
-     * 
-     * 
-     */
 }
